@@ -285,14 +285,6 @@ Some test files are missing CaseComponent metadata (4 files identified). Ensure 
 
 ---
 
-## Files Generated
-
-1. **robottelo_crud_by_casecomponent_detailed.json** - Complete detailed results with all test names and file mappings
-2. **robottelo_crud_by_casecomponent_summary.csv** - Summary statistics in CSV format for easy analysis
-3. **ROBOTTELO_CRUD_ANALYSIS_REPORT.md** - This comprehensive report
-
----
-
 ## Analysis Details
 
 - **Total test files analyzed:** 230 files (72 API + 81 CLI + 77 UI)
