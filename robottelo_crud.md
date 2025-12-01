@@ -1,366 +1,307 @@
-# Robottelo CRUD Test Analysis Report
+# Robottelo CRUD Test Analysis Report (By CaseComponent)
 
 **Repository:** https://github.com/SatelliteQE/robottelo  
 **Analysis Date:** December 1, 2025  
-**Focus:** Tests Directory - CRUD Operations (API/CLI/UI)
+**Focus:** Tests Directory - CRUD Operations (API/CLI/UI)  
+**Component Classification:** Based on `:CaseComponent:` metadata in test files
 
 ---
 
 ## Executive Summary
 
-This report presents a comprehensive analysis of CRUD (Create, Read, Update, Delete) tests in the Robottelo test suite, which exercises The Foreman/Satellite automation testing.
+This report presents a comprehensive analysis of CRUD (Create, Read, Update, Delete) tests in the Robottelo test suite, which exercises The Foreman/Satellite automation testing. Tests are categorized by their **CaseComponent** metadata, which is extracted from test docstrings (test-level, class-level, or module-level).
 
 ### Total CRUD Tests by Type
 
 | Test Type | Total CRUD Tests |
 |-----------|------------------|
-| **API**   | 1,235            |
-| **CLI**   | 1,120            |
-| **UI**    | 749              |
-| **TOTAL** | **3,104**        |
+| **API**   | 1,200            |
+| **CLI**   | 1,072            |
+| **UI**    | 730              |
+| **TOTAL** | **3,002**        |
+
+### Unique Components Tested
+
+**54 unique CaseComponents** identified across the test suite
 
 ---
 
-## Detailed CRUD Test Analysis by Component
+## Detailed CRUD Test Analysis by CaseComponent
 
-### API Tests (1,235 Total)
+### API Tests (1,200 Total)
 
-| Component | Create | Read | Update | Delete | Full CRUD | Total |
-|-----------|--------|------|--------|--------|-----------|-------|
-| contentview | 28 | 38 | 32 | 2 | 15 | 115 |
-| host | 32 | 27 | 25 | 3 | 11 | 98 |
-| repository | 32 | 28 | 15 | 10 | 4 | 89 |
-| syncplan | 34 | 27 | 8 | 7 | 0 | 76 |
-| contentviewfilter | 29 | 8 | 13 | 3 | 1 | 54 |
-| role | 22 | 17 | 5 | 2 | 3 | 49 |
-| user | 33 | 2 | 10 | 2 | 1 | 48 |
-| classparameters | 9 | 14 | 14 | 2 | 0 | 39 |
-| activationkey | 20 | 8 | 6 | 3 | 0 | 37 |
-| usergroup | 15 | 13 | 7 | 1 | 0 | 36 |
-| docker | 11 | 10 | 7 | 2 | 5 | 35 |
-| hostgroup | 11 | 12 | 8 | 0 | 4 | 35 |
-| hostcollection | 19 | 4 | 8 | 1 | 0 | 32 |
-| subnet | 12 | 4 | 4 | 3 | 0 | 23 |
-| bookmarks | 13 | 3 | 6 | 0 | 0 | 22 |
-| capsulecontent | 0 | 1 | 2 | 0 | 19 | 22 |
-| operatingsystem | 15 | 0 | 5 | 0 | 1 | 21 |
-| location | 10 | 4 | 4 | 1 | 1 | 20 |
-| contentcredentials | 11 | 1 | 5 | 1 | 1 | 19 |
-| reporttemplates | 6 | 5 | 0 | 0 | 8 | 19 |
-| computeresource_libvirt | 8 | 4 | 3 | 0 | 2 | 17 |
-| errata | 3 | 5 | 2 | 1 | 5 | 16 |
-| organization | 8 | 1 | 5 | 0 | 2 | 16 |
-| product | 9 | 3 | 3 | 0 | 1 | 16 |
-| repositories | 5 | 7 | 3 | 0 | 0 | 15 |
-| media | 7 | 2 | 5 | 0 | 1 | 15 |
-| partitiontable | 9 | 1 | 4 | 0 | 1 | 15 |
-| provisioningtemplate | 4 | 0 | 1 | 3 | 7 | 15 |
-| ansible | 1 | 8 | 2 | 2 | 1 | 14 |
-| settings | 1 | 1 | 11 | 0 | 1 | 14 |
-| permission | 4 | 6 | 1 | 1 | 0 | 12 |
-| provisioning | 5 | 5 | 1 | 0 | 1 | 12 |
-| contentviewversion | 3 | 1 | 0 | 3 | 5 | 12 |
-| computeprofile | 5 | 3 | 2 | 1 | 0 | 11 |
-| subscription | 4 | 2 | 1 | 2 | 2 | 11 |
-| registration | 5 | 1 | 3 | 1 | 1 | 11 |
-| capsule | 5 | 2 | 2 | 1 | 0 | 10 |
-| multiple_paths | 0 | 8 | 0 | 2 | 0 | 10 |
-| lifecycleenvironment | 1 | 0 | 0 | 0 | 9 | 10 |
-| http_proxy | 3 | 2 | 2 | 0 | 2 | 9 |
-| webhook | 6 | 0 | 2 | 0 | 1 | 9 |
-| environment | 3 | 0 | 4 | 0 | 1 | 8 |
-| filter | 3 | 2 | 0 | 2 | 0 | 7 |
-| templatesync | 0 | 3 | 2 | 0 | 1 | 6 |
-| audit | 2 | 0 | 1 | 1 | 1 | 5 |
-| discoveredhost | 2 | 0 | 2 | 1 | 0 | 5 |
-| remoteexecution | 0 | 2 | 2 | 0 | 1 | 5 |
-| computeresource_azurerm | 2 | 1 | 0 | 0 | 1 | 4 |
-| architecture | 1 | 1 | 1 | 0 | 1 | 4 |
-| discoveryrule | 2 | 0 | 0 | 0 | 2 | 4 |
-| computeresource_gce | 2 | 0 | 0 | 0 | 1 | 3 |
-| computeresource_vmware | 0 | 1 | 1 | 0 | 1 | 3 |
-| rhcloud_inventory | 1 | 1 | 0 | 0 | 1 | 3 |
-| acs | 0 | 0 | 0 | 0 | 2 | 2 |
-| convert2rhel | 0 | 2 | 0 | 0 | 0 | 2 |
-| parameters | 1 | 0 | 1 | 0 | 0 | 2 |
-| provisioning_puppet | 1 | 0 | 0 | 0 | 1 | 2 |
-| rhc | 0 | 1 | 1 | 0 | 0 | 2 |
-| eol_banner | 0 | 0 | 0 | 0 | 1 | 1 |
-| foremantask | 0 | 1 | 0 | 0 | 0 | 1 |
-| imagemode | 0 | 1 | 0 | 0 | 0 | 1 |
-| jobtemplate | 0 | 0 | 0 | 0 | 1 | 1 |
-| ldapauthsource | 0 | 0 | 0 | 0 | 1 | 1 |
-| notifications | 0 | 1 | 0 | 0 | 0 | 1 |
-| oscap_tailoringfiles | 0 | 0 | 0 | 0 | 1 | 1 |
-| oscappolicy | 0 | 0 | 0 | 0 | 1 | 1 |
-| template_combination | 0 | 0 | 0 | 0 | 1 | 1 |
+| CaseComponent | Create | Read | Update | Delete | Full CRUD | Total |
+|---------------|--------|------|--------|--------|-----------|-------|
+| **ContentViews** | 58 | 45 | 43 | 8 | 21 | **175** |
+| **UsersRoles** | 77 | 40 | 23 | 8 | 4 | **152** |
+| **Hosts** | 49 | 31 | 35 | 3 | 14 | **132** |
+| **Repositories** | 46 | 38 | 21 | 10 | 5 | **120** |
+| **SyncPlans** | 34 | 27 | 8 | 7 | 0 | **76** |
+| **Puppet** | 14 | 15 | 18 | 2 | 2 | **51** |
+| **ComputeResources** | 17 | 9 | 6 | 1 | 5 | **38** |
+| **ActivationKeys** | 20 | 8 | 6 | 3 | 0 | **37** |
+| **OrganizationsandLocations** | 18 | 5 | 9 | 1 | 3 | **36** |
+| **HostGroup** | 11 | 12 | 8 | 0 | 4 | **35** |
+| **Provisioning** | 20 | 5 | 6 | 0 | 2 | **33** |
+| **HostCollections** | 19 | 4 | 8 | 1 | 0 | **32** |
+| **Networking** | 12 | 4 | 4 | 3 | 0 | **23** |
+| **Capsule** | 0 | 1 | 2 | 0 | 19 | **22** |
+| **Search** | 13 | 3 | 6 | 0 | 0 | **22** |
+| **ContentCredentials** | 11 | 1 | 5 | 1 | 1 | **19** |
+| **Reporting** | 6 | 5 | 0 | 0 | 8 | **19** |
+| **ErrataManagement** | 3 | 5 | 2 | 1 | 5 | **16** |
+| **ProvisioningTemplates** | 4 | 0 | 1 | 3 | 8 | **16** |
+| **Ansible** | 1 | 8 | 2 | 2 | 1 | **14** |
+| **Settings** | 1 | 1 | 11 | 0 | 1 | **14** |
+| **Registration** | 5 | 1 | 3 | 1 | 1 | **11** |
+| **SubscriptionManagement** | 4 | 2 | 1 | 2 | 2 | **11** |
+| **API** | 0 | 8 | 0 | 2 | 0 | **10** |
+| **LifecycleEnvironments** | 1 | 0 | 0 | 0 | 9 | **10** |
+| **HTTPProxy** | 3 | 2 | 2 | 0 | 2 | **9** |
+| **HooksandWebhooks** | 6 | 0 | 2 | 0 | 1 | **9** |
+| **ForemanProxy** | 4 | 1 | 2 | 1 | 0 | **8** |
+| **Pulp** | 2 | 2 | 2 | 0 | 0 | **6** |
+| **RemoteExecution** | 0 | 2 | 2 | 0 | 2 | **6** |
+| **TemplatesPlugin** | 0 | 3 | 2 | 0 | 1 | **6** |
+| **AuditLog** | 2 | 0 | 1 | 1 | 1 | **5** |
+| **DiscoveryImage** | 2 | 0 | 2 | 1 | 0 | **5** |
+| **RHCloud** | 1 | 2 | 1 | 0 | 1 | **5** |
+| **DiscoveryPlugin** | 2 | 0 | 0 | 0 | 2 | **4** |
+| **AlternateContentSources** | 0 | 0 | 0 | 0 | 2 | **2** |
+| **Conversionsappliance** | 0 | 2 | 0 | 0 | 0 | **2** |
+| **Parameters** | 1 | 0 | 1 | 0 | 0 | **2** |
+| **SCAPPlugin** | 0 | 0 | 0 | 0 | 2 | **2** |
+| **Authentication** | 0 | 0 | 0 | 0 | 1 | **1** |
+| **Dashboard** | 0 | 0 | 0 | 0 | 1 | **1** |
+| **ImageMode** | 0 | 1 | 0 | 0 | 0 | **1** |
+| **Notifications** | 0 | 1 | 0 | 0 | 0 | **1** |
+| **TasksPlugin** | 0 | 1 | 0 | 0 | 0 | **1** |
 
-### CLI Tests (1,120 Total)
+---
 
-| Component | Create | Read | Update | Delete | Full CRUD | Total |
-|-----------|--------|------|--------|--------|-----------|-------|
-| contentview | 14 | 33 | 10 | 10 | 37 | 104 |
-| repository | 19 | 38 | 13 | 8 | 6 | 84 |
-| activationkey | 11 | 19 | 14 | 7 | 15 | 66 |
-| host | 9 | 22 | 10 | 2 | 21 | 64 |
-| contentviewfilter | 29 | 22 | 7 | 6 | 0 | 64 |
-| oscap | 10 | 16 | 6 | 6 | 1 | 39 |
-| contentcredentials | 5 | 15 | 13 | 3 | 0 | 36 |
-| satellitesync | 4 | 25 | 1 | 1 | 5 | 36 |
-| docker | 4 | 13 | 6 | 2 | 9 | 34 |
-| settings | 0 | 15 | 19 | 0 | 0 | 34 |
-| organization | 4 | 15 | 2 | 11 | 1 | 33 |
-| discoveryrule | 12 | 9 | 6 | 3 | 1 | 31 |
-| syncplan | 6 | 17 | 3 | 1 | 0 | 27 |
-| subnet | 8 | 2 | 5 | 6 | 2 | 23 |
-| errata | 5 | 14 | 1 | 0 | 2 | 22 |
-| remoteexecution | 0 | 9 | 3 | 2 | 6 | 20 |
-| user | 5 | 6 | 3 | 3 | 2 | 19 |
-| reporttemplates | 3 | 6 | 4 | 1 | 4 | 18 |
-| classparameters | 2 | 7 | 7 | 0 | 1 | 17 |
-| operatingsystem | 3 | 7 | 2 | 2 | 1 | 15 |
-| computeresource_libvirt | 7 | 2 | 3 | 0 | 3 | 15 |
-| hostgroup | 3 | 5 | 4 | 2 | 1 | 15 |
-| ansible | 4 | 6 | 1 | 2 | 1 | 14 |
-| location | 3 | 4 | 3 | 3 | 1 | 14 |
-| subscription | 2 | 7 | 1 | 3 | 0 | 13 |
-| registration | 6 | 3 | 1 | 1 | 1 | 12 |
-| auth | 1 | 8 | 2 | 0 | 0 | 11 |
-| oscap_tailoringfiles | 4 | 5 | 0 | 2 | 0 | 11 |
-| hostcollection | 3 | 5 | 2 | 0 | 1 | 11 |
-| environment | 3 | 3 | 2 | 1 | 1 | 10 |
-| domain | 2 | 2 | 1 | 1 | 1 | 7 |
-| capsulecontent | 0 | 0 | 1 | 0 | 6 | 7 |
-| lifecycleenvironment | 0 | 0 | 0 | 0 | 7 | 7 |
-| report | 1 | 3 | 0 | 3 | 0 | 7 |
-| acs | 3 | 0 | 1 | 0 | 2 | 6 |
-| discoveredhost | 0 | 3 | 2 | 1 | 0 | 6 |
-| ldapauthsource | 0 | 3 | 0 | 0 | 3 | 6 |
-| ostreebranch | 0 | 6 | 0 | 0 | 0 | 6 |
-| product | 2 | 2 | 0 | 1 | 1 | 6 |
-| model | 2 | 1 | 1 | 1 | 1 | 6 |
-| rhcloud_inventory | 1 | 2 | 1 | 0 | 2 | 6 |
-| architecture | 1 | 1 | 1 | 1 | 1 | 5 |
-| http_proxy | 2 | 2 | 0 | 0 | 1 | 5 |
-| logging | 1 | 4 | 0 | 0 | 0 | 5 |
-| medium | 2 | 1 | 0 | 1 | 1 | 5 |
-| templatesync | 0 | 2 | 2 | 1 | 0 | 5 |
-| fact | 0 | 4 | 0 | 0 | 1 | 5 |
-| webhook | 0 | 2 | 2 | 0 | 1 | 5 |
-| computeresource_azurerm | 1 | 1 | 0 | 0 | 2 | 4 |
-| contentaccess | 1 | 2 | 1 | 0 | 0 | 4 |
-| repositories | 1 | 2 | 1 | 0 | 0 | 4 |
-| container_management | 0 | 1 | 0 | 0 | 3 | 4 |
-| computeresource_vmware | 0 | 0 | 0 | 0 | 3 | 3 |
-| flatpak | 0 | 0 | 0 | 0 | 3 | 3 |
-| hammer | 0 | 2 | 0 | 1 | 0 | 3 |
-| leapp_client | 0 | 1 | 0 | 1 | 1 | 3 |
-| filter | 1 | 4 | 2 | 2 | 0 | 9 |
-| jobtemplate | 4 | 3 | 0 | 2 | 0 | 9 |
-| partitiontable | 2 | 3 | 0 | 3 | 1 | 9 |
-| provisioningtemplate | 3 | 3 | 1 | 1 | 1 | 9 |
-| realm | 5 | 2 | 0 | 2 | 0 | 9 |
-| role | 1 | 5 | 0 | 1 | 2 | 9 |
-| usergroup | 2 | 3 | 0 | 3 | 1 | 9 |
-| computeresource_osp | 1 | 0 | 0 | 0 | 1 | 2 |
-| globalparam | 0 | 1 | 0 | 1 | 0 | 2 |
-| rhcloud_iop | 0 | 0 | 0 | 0 | 2 | 2 |
-| bootdisk | 0 | 0 | 0 | 0 | 1 | 1 |
-| capsule | 0 | 0 | 0 | 1 | 0 | 1 |
-| computeresource_ec2 | 1 | 0 | 0 | 0 | 0 | 1 |
-| imagemode | 0 | 1 | 0 | 0 | 0 | 1 |
-| puppetclass | 0 | 1 | 0 | 0 | 0 | 1 |
-| repository_set | 0 | 1 | 0 | 0 | 0 | 1 |
+### CLI Tests (1,072 Total)
 
-### UI Tests (749 Total)
+| CaseComponent | Create | Read | Update | Delete | Full CRUD | Total |
+|---------------|--------|------|--------|--------|-----------|-------|
+| **ContentViews** | 43 | 55 | 17 | 16 | 37 | **168** |
+| **Repositories** | 22 | 49 | 14 | 9 | 10 | **104** |
+| **Hosts** | 19 | 31 | 14 | 9 | 26 | **99** |
+| **ActivationKeys** | 11 | 19 | 14 | 7 | 15 | **66** |
+| **SCAPPlugin** | 14 | 21 | 6 | 8 | 1 | **50** |
+| **OrganizationsandLocations** | 7 | 19 | 5 | 14 | 2 | **47** |
+| **UsersRoles** | 9 | 18 | 5 | 9 | 5 | **46** |
+| **ContentCredentials** | 5 | 15 | 13 | 3 | 0 | **36** |
+| **InterSatelliteSync** | 4 | 25 | 1 | 1 | 5 | **36** |
+| **Puppet** | 6 | 14 | 9 | 4 | 2 | **35** |
+| **Settings** | 0 | 15 | 19 | 0 | 0 | **34** |
+| **DiscoveryPlugin** | 12 | 9 | 6 | 3 | 1 | **31** |
+| **RemoteExecution** | 4 | 12 | 3 | 4 | 7 | **30** |
+| **SyncPlans** | 6 | 17 | 3 | 1 | 0 | **27** |
+| **Authentication** | 6 | 13 | 2 | 2 | 3 | **26** |
+| **ComputeResources** | 10 | 3 | 3 | 0 | 9 | **25** |
+| **Networking** | 8 | 2 | 5 | 6 | 2 | **23** |
+| **ErrataManagement** | 5 | 14 | 1 | 0 | 2 | **22** |
+| **Reporting** | 3 | 6 | 4 | 1 | 4 | **18** |
+| **HostGroup** | 3 | 5 | 4 | 2 | 1 | **15** |
+| **Provisioning** | 3 | 7 | 2 | 2 | 1 | **15** |
+| **SubscriptionManagement** | 2 | 7 | 1 | 3 | 0 | **13** |
+| **Registration** | 6 | 3 | 1 | 1 | 1 | **12** |
+| **HostCollections** | 3 | 5 | 2 | 0 | 1 | **11** |
+| **ProvisioningTemplates** | 3 | 3 | 1 | 1 | 1 | **9** |
+| **Capsule** | 0 | 0 | 1 | 0 | 6 | **7** |
+| **LifecycleEnvironments** | 0 | 0 | 0 | 0 | 7 | **7** |
+| **AlternateContentSources** | 3 | 0 | 1 | 0 | 2 | **6** |
+| **DiscoveryImage** | 0 | 3 | 2 | 1 | 0 | **6** |
+| **RHCloud** | 1 | 2 | 1 | 0 | 2 | **6** |
+| **Fact** | 0 | 4 | 0 | 0 | 1 | **5** |
+| **HTTPProxy** | 2 | 2 | 0 | 0 | 1 | **5** |
+| **HooksandWebhooks** | 0 | 2 | 2 | 0 | 1 | **5** |
+| **Logging** | 1 | 4 | 0 | 0 | 0 | **5** |
+| **TemplatesPlugin** | 0 | 2 | 2 | 1 | 0 | **5** |
+| **ContainerImageManagement** | 0 | 1 | 0 | 0 | 3 | **4** |
+| **Hammer** | 0 | 2 | 0 | 1 | 0 | **3** |
+| **Insights** | 0 | 0 | 0 | 0 | 2 | **2** |
+| **Leappintegration** | 0 | 1 | 0 | 1 | 0 | **2** |
+| **Parameters** | 0 | 1 | 0 | 1 | 0 | **2** |
+| **BootdiskPlugin** | 0 | 0 | 0 | 0 | 1 | **1** |
+| **ForemanProxy** | 0 | 0 | 0 | 1 | 0 | **1** |
+| **ImageMode** | 0 | 1 | 0 | 0 | 0 | **1** |
+| **katello** | 0 | 1 | 0 | 0 | 0 | **1** |
 
-| Component | Create | Read | Update | Delete | Full CRUD | Total |
-|-----------|--------|------|--------|--------|-----------|-------|
-| contentview_old | 48 | 25 | 9 | 5 | 27 | 114 |
-| host | 25 | 22 | 8 | 4 | 14 | 73 |
-| activationkey | 18 | 15 | 4 | 5 | 9 | 51 |
-| repository | 13 | 11 | 5 | 5 | 3 | 37 |
-| contentcredentials | 13 | 13 | 8 | 0 | 1 | 35 |
-| ldap_authentication | 13 | 11 | 4 | 2 | 3 | 33 |
-| errata | 9 | 8 | 3 | 0 | 3 | 23 |
-| settings | 3 | 5 | 10 | 1 | 2 | 21 |
-| contenthost | 4 | 9 | 4 | 1 | 2 | 20 |
-| ansible | 4 | 7 | 3 | 5 | 0 | 19 |
-| user | 8 | 7 | 3 | 0 | 1 | 19 |
-| contentview | 6 | 3 | 4 | 0 | 3 | 16 |
-| hostgroup | 4 | 3 | 2 | 1 | 3 | 13 |
-| http_proxy | 4 | 3 | 1 | 1 | 3 | 12 |
-| smartclassparameter | 2 | 4 | 4 | 0 | 2 | 12 |
-| audit | 5 | 2 | 1 | 2 | 1 | 11 |
-| discoveredhost | 2 | 5 | 3 | 1 | 0 | 11 |
-| registration | 5 | 2 | 1 | 0 | 3 | 11 |
-| role | 7 | 1 | 1 | 1 | 1 | 11 |
-| dashboard | 4 | 4 | 0 | 0 | 1 | 9 |
-| domain | 4 | 2 | 2 | 1 | 1 | 10 |
-| location | 3 | 2 | 3 | 0 | 1 | 9 |
-| organization | 3 | 3 | 2 | 0 | 2 | 10 |
-| partitiontable | 6 | 1 | 0 | 1 | 1 | 9 |
-| rhcloud_inventory | 1 | 4 | 4 | 0 | 1 | 10 |
-| syncplan | 3 | 3 | 0 | 2 | 2 | 10 |
-| computeresource_vmware | 2 | 1 | 0 | 0 | 5 | 8 |
-| hostcollection | 2 | 0 | 0 | 2 | 4 | 8 |
-| bookmarks | 4 | 0 | 1 | 1 | 1 | 7 |
-| discoveryrule | 2 | 1 | 0 | 2 | 2 | 7 |
-| product | 3 | 2 | 0 | 1 | 1 | 7 |
-| lifecycleenvironment | 0 | 0 | 0 | 0 | 6 | 6 |
-| package | 0 | 6 | 0 | 0 | 0 | 6 |
-| remoteexecution | 1 | 4 | 1 | 0 | 0 | 6 |
-| reporttemplates | 2 | 0 | 0 | 1 | 3 | 6 |
-| subscription | 3 | 0 | 2 | 0 | 1 | 6 |
-| computeresource_libvirt | 1 | 0 | 0 | 1 | 3 | 5 |
-| capsulecontent | 0 | 1 | 1 | 0 | 2 | 4 |
-| computeresource_azurerm | 1 | 0 | 0 | 1 | 1 | 3 |
-| computeresource_ec2 | 1 | 1 | 0 | 0 | 1 | 3 |
-| computeresource_gce | 0 | 0 | 0 | 0 | 3 | 3 |
-| jobtemplate | 1 | 1 | 0 | 0 | 1 | 3 |
-| oscapcontent | 2 | 0 | 0 | 0 | 1 | 3 |
-| puppetenvironment | 1 | 1 | 0 | 0 | 1 | 3 |
-| sync | 2 | 1 | 0 | 0 | 0 | 3 |
-| templatesync | 1 | 1 | 1 | 0 | 0 | 3 |
-| usergroup | 1 | 0 | 0 | 1 | 1 | 3 |
-| acs | 1 | 0 | 0 | 0 | 1 | 2 |
-| flatpak | 0 | 1 | 0 | 0 | 1 | 2 |
-| imagemode | 0 | 1 | 0 | 0 | 1 | 2 |
-| operatingsystem | 1 | 0 | 0 | 0 | 1 | 2 |
-| oscappolicy | 0 | 0 | 0 | 0 | 2 | 2 |
-| oscaptailoringfile | 0 | 1 | 0 | 0 | 1 | 2 |
-| provisioningtemplate | 0 | 1 | 0 | 0 | 1 | 2 |
-| rhc | 0 | 1 | 1 | 0 | 0 | 2 |
-| rhcloud_insights | 0 | 0 | 0 | 1 | 1 | 2 |
-| rhcloud_iop | 0 | 0 | 0 | 0 | 2 | 2 |
-| architecture | 0 | 0 | 0 | 0 | 1 | 1 |
-| branding | 0 | 1 | 0 | 0 | 0 | 1 |
-| computeprofiles | 0 | 0 | 0 | 0 | 1 | 1 |
-| config_group | 0 | 0 | 0 | 0 | 1 | 1 |
-| containerimagetag | 0 | 1 | 0 | 0 | 0 | 1 |
-| documentation_links | 0 | 1 | 0 | 0 | 0 | 1 |
-| eol_banner | 0 | 0 | 0 | 0 | 1 | 1 |
-| hardwaremodel | 0 | 0 | 0 | 0 | 1 | 1 |
-| leapp_client | 0 | 1 | 0 | 0 | 0 | 1 |
-| media | 0 | 0 | 0 | 0 | 1 | 1 |
-| modulestreams | 0 | 1 | 0 | 0 | 0 | 1 |
-| puppetclass | 0 | 0 | 0 | 0 | 1 | 1 |
-| repositories | 0 | 1 | 0 | 0 | 0 | 1 |
-| rhcloud_insights_vulnerability | 0 | 0 | 0 | 0 | 1 | 1 |
-| search | 0 | 0 | 0 | 0 | 1 | 1 |
-| subnet | 0 | 0 | 0 | 0 | 1 | 1 |
-| webhook | 0 | 0 | 0 | 0 | 1 | 1 |
+---
+
+### UI Tests (730 Total)
+
+| CaseComponent | Create | Read | Update | Delete | Full CRUD | Total |
+|---------------|--------|------|--------|--------|-----------|-------|
+| **ContentViews** | 54 | 28 | 13 | 5 | 30 | **130** |
+| **Hosts** | 39 | 34 | 14 | 7 | 21 | **115** |
+| **Repositories** | 18 | 23 | 5 | 6 | 5 | **57** |
+| **ActivationKeys** | 18 | 15 | 4 | 5 | 9 | **51** |
+| **ContentCredentials** | 13 | 13 | 8 | 0 | 1 | **35** |
+| **UsersRoles** | 16 | 8 | 4 | 2 | 3 | **33** |
+| **Authentication** | 13 | 11 | 4 | 2 | 3 | **33** |
+| **ErrataManagement** | 9 | 8 | 3 | 0 | 3 | **23** |
+| **ComputeResources** | 5 | 2 | 0 | 2 | 14 | **23** |
+| **Settings** | 3 | 5 | 10 | 1 | 2 | **21** |
+| **OrganizationsandLocations** | 6 | 5 | 5 | 0 | 3 | **19** |
+| **Puppet** | 3 | 5 | 4 | 0 | 5 | **17** |
+| **RHCloud** | 1 | 5 | 5 | 1 | 2 | **14** |
+| **HostGroup** | 4 | 3 | 2 | 1 | 3 | **13** |
+| **HTTPProxy** | 4 | 3 | 1 | 1 | 3 | **12** |
+| **AuditLog** | 5 | 2 | 1 | 2 | 1 | **11** |
+| **DiscoveryImage** | 2 | 5 | 3 | 1 | 0 | **11** |
+| **Registration** | 5 | 2 | 1 | 0 | 3 | **11** |
+| **Dashboard** | 4 | 4 | 0 | 0 | 2 | **10** |
+| **SyncPlans** | 3 | 3 | 0 | 2 | 2 | **10** |
+| **RemoteExecution** | 2 | 5 | 1 | 0 | 1 | **9** |
+| **HostCollections** | 2 | 0 | 0 | 2 | 4 | **8** |
+| **Search** | 4 | 0 | 1 | 1 | 2 | **8** |
+| **DiscoveryPlugin** | 2 | 1 | 0 | 2 | 2 | **7** |
+| **SCAPPlugin** | 2 | 1 | 0 | 0 | 4 | **7** |
+| **LifecycleEnvironments** | 0 | 0 | 0 | 0 | 6 | **6** |
+| **Reporting** | 2 | 0 | 0 | 1 | 3 | **6** |
+| **SubscriptionManagement** | 3 | 0 | 2 | 0 | 1 | **6** |
+| **Capsule** | 0 | 1 | 1 | 0 | 2 | **4** |
+| **Insights** | 0 | 0 | 0 | 0 | 3 | **3** |
+| **TemplatesPlugin** | 1 | 1 | 1 | 0 | 0 | **3** |
+| **AlternateContentSources** | 1 | 0 | 0 | 0 | 1 | **2** |
+| **Branding** | 0 | 2 | 0 | 0 | 0 | **2** |
+| **ImageMode** | 0 | 1 | 0 | 0 | 1 | **2** |
+| **Provisioning** | 1 | 0 | 0 | 0 | 1 | **2** |
+| **ProvisioningTemplates** | 0 | 1 | 0 | 0 | 1 | **2** |
+| **ContainerImageManagement** | 0 | 1 | 0 | 0 | 0 | **1** |
+| **HooksandWebhooks** | 0 | 0 | 0 | 0 | 1 | **1** |
+| **Leappintegration** | 0 | 1 | 0 | 0 | 0 | **1** |
+| **Networking** | 0 | 0 | 0 | 0 | 1 | **1** |
+
+---
+
+## Top Components by Total CRUD Tests (All Test Types Combined)
+
+| Rank | CaseComponent | API | CLI | UI | **Total** |
+|------|---------------|-----|-----|-------|-----------|
+| 1 | **ContentViews** | 175 | 168 | 130 | **473** |
+| 2 | **Hosts** | 132 | 99 | 115 | **346** |
+| 3 | **Repositories** | 120 | 104 | 57 | **281** |
+| 4 | **UsersRoles** | 152 | 46 | 33 | **231** |
+| 5 | **ActivationKeys** | 37 | 66 | 51 | **154** |
+| 6 | **Puppet** | 51 | 35 | 17 | **103** |
+| 7 | **SyncPlans** | 76 | 27 | 10 | **113** |
+| 8 | **OrganizationsandLocations** | 36 | 47 | 19 | **102** |
+| 9 | **ContentCredentials** | 19 | 36 | 35 | **90** |
+| 10 | **ComputeResources** | 38 | 25 | 23 | **86** |
 
 ---
 
 ## Key Findings
 
-### Top Components with Most CRUD Tests
+### 1. **Component Coverage Analysis**
 
-#### 1. **ContentView** (235 total tests)
-- API: 115 tests (28 Create, 38 Read, 32 Update, 2 Delete, 15 Full CRUD)
-- CLI: 104 tests (14 Create, 33 Read, 10 Update, 10 Delete, 37 Full CRUD)
-- UI: 16 tests (6 Create, 3 Read, 4 Update, 0 Delete, 3 Full CRUD)
+- **54 unique CaseComponents** tested across the suite
+- **Top 3 most tested components:**
+  1. ContentViews (473 tests)
+  2. Hosts (346 tests)
+  3. Repositories (281 tests)
 
-#### 2. **Repository** (210 total tests)
-- API: 89 tests (32 Create, 28 Read, 15 Update, 10 Delete, 4 Full CRUD)
-- CLI: 84 tests (19 Create, 38 Read, 13 Update, 8 Delete, 6 Full CRUD)
-- UI: 37 tests (13 Create, 11 Read, 5 Update, 5 Delete, 3 Full CRUD)
+### 2. **CRUD Operation Distribution**
 
-#### 3. **Host** (235 total tests)
-- API: 98 tests (32 Create, 27 Read, 25 Update, 3 Delete, 11 Full CRUD)
-- CLI: 64 tests (9 Create, 22 Read, 10 Update, 2 Delete, 21 Full CRUD)
-- UI: 73 tests (25 Create, 22 Read, 8 Update, 4 Delete, 14 Full CRUD)
+#### API Tests (1,200 total)
+- **Create:** 46.3% of tests
+- **Read:** 26.8% of tests
+- **Update:** 17.9% of tests
+- **Delete:** 5.4% of tests
+- **Full CRUD:** 11.7% of tests
 
-#### 4. **Activation Key** (154 total tests)
-- API: 37 tests (20 Create, 8 Read, 6 Update, 3 Delete, 0 Full CRUD)
-- CLI: 66 tests (11 Create, 19 Read, 14 Update, 7 Delete, 15 Full CRUD)
-- UI: 51 tests (18 Create, 15 Read, 4 Update, 5 Delete, 9 Full CRUD)
+#### CLI Tests (1,072 total)
+- **Create:** 23.6% of tests
+- **Read:** 40.2% of tests
+- **Update:** 16.1% of tests
+- **Delete:** 8.5% of tests
+- **Full CRUD:** 18.8% of tests
 
-#### 5. **ContentView Filter** (118 total tests)
-- API: 54 tests (29 Create, 8 Read, 13 Update, 3 Delete, 1 Full CRUD)
-- CLI: 64 tests (29 Create, 22 Read, 7 Update, 6 Delete, 0 Full CRUD)
-- UI: Not separately tested (covered in contentview_old)
+#### UI Tests (730 total)
+- **Create:** 39.9% of tests
+- **Read:** 29.3% of tests
+- **Update:** 14.1% of tests
+- **Delete:** 6.8% of tests
+- **Full CRUD:** 22.2% of tests
 
-### CRUD Operation Distribution
+### 3. **Test Interface Comparison**
 
-#### API Tests
-- Create operations: 45.5%
-- Read operations: 27.8%
-- Update operations: 19.4%
-- Delete operations: 5.1%
-- Full CRUD operations: 10.2%
+- **API:** Strongest in total test count (1,200), heavy focus on Create operations
+- **CLI:** Most balanced distribution, highest percentage of Full CRUD tests (18.8%)
+- **UI:** Smallest test count but highest percentage of Full CRUD tests (22.2%)
 
-#### CLI Tests
-- Create operations: 24.6%
-- Read operations: 38.9%
-- Update operations: 17.1%
-- Delete operations: 8.6%
-- Full CRUD operations: 18.8%
+### 4. **Coverage Gaps Identified**
 
-#### UI Tests
-- Create operations: 41.1%
-- Read operations: 28.4%
-- Update operations: 14.2%
-- Delete operations: 6.7%
-- Full CRUD operations: 21.6%
+**Components with minimal Delete operation coverage:**
+- ContentViews: 8 API, 16 CLI, 5 UI delete tests
+- Hosts: 3 API, 9 CLI, 7 UI delete tests
+- Repositories: 10 API, 9 CLI, 6 UI delete tests
 
----
-
-## Methodology
-
-The analysis was performed using a Python script that:
-
-1. **Scanned** all test files in the `tests/foreman/api`, `tests/foreman/cli`, and `tests/foreman/ui` directories
-2. **Identified** CRUD operations using pattern matching on:
-   - Test function names (e.g., `test_positive_create_*`)
-   - Test decorators (e.g., `@positive`, `@negative`)
-   - Test code content (e.g., `.create()`, `.update()`, `.delete()`)
-3. **Categorized** tests into:
-   - **Create**: Tests involving creation of resources
-   - **Read**: Tests involving reading/listing/getting resources
-   - **Update**: Tests involving updating/editing resources
-   - **Delete**: Tests involving deletion/removal of resources
-   - **Full CRUD**: Tests performing complete lifecycle operations
+**Components tested in only one interface:**
+- **katello** (CLI only - 1 test)
+- **Branding** (UI only - 2 tests)
+- **Conversionsappliance** (API only - 2 tests)
 
 ---
 
-## Component Coverage Summary
+## Component Classification Methodology
 
-Total unique components tested: **72 components**
+Tests were classified using the `:CaseComponent:` metadata found in test docstrings following this hierarchy:
 
-- **API Coverage**: 72 components
-- **CLI Coverage**: 69 components
-- **UI Coverage**: 67 components
+1. **Test-level docstring** - CaseComponent specified in individual test function docstring
+2. **Class-level docstring** - CaseComponent specified in test class docstring (for grouped tests)
+3. **Module-level docstring** - CaseComponent specified at the file level
 
-### Components with Full Test Coverage (API + CLI + UI)
-Components tested across all three interfaces include:
-- activationkey, ansible, architecture, contentcredentials, contentview, discoveredhost, discoveryrule, docker, domain, errata, host, hostcollection, hostgroup, http_proxy, location, operatingsystem, organization, partitiontable, product, registration, remoteexecution, repository, role, settings, subscription, syncplan, user, usergroup, webhook
+This ensures accurate component classification based on the actual test metadata rather than file naming conventions.
 
 ---
 
 ## Recommendations
 
-1. **Increase Delete Operation Coverage**: Delete operations are underrepresented across all test types (5-9% of total tests)
+### 1. **Increase Delete Operation Coverage**
+Delete operations are consistently underrepresented across all test types (5-9% of total tests). Recommend adding comprehensive deletion tests for:
+- ContentViews
+- Hosts
+- Repositories
+- All major components with < 10% delete coverage
 
-2. **Focus on UI Test Expansion**: UI tests (749) lag behind API (1,235) and CLI (1,120) tests
+### 2. **Balance UI Test Coverage**
+UI tests (730) lag significantly behind API (1,200) and CLI (1,072) tests. Consider expanding UI test coverage for:
+- Settings (21 UI vs 14 API, 34 CLI)
+- SyncPlans (10 UI vs 76 API, 27 CLI)
+- Puppet (17 UI vs 51 API, 35 CLI)
 
-3. **Balance CRUD Operations**: Some components have imbalanced CRUD coverage (e.g., many Create tests but few Delete tests)
+### 3. **Expand Full CRUD Tests**
+While CLI and UI have good Full CRUD coverage (18.8% and 22.2%), API tests could benefit from more end-to-end lifecycle tests (currently 11.7%)
 
-4. **Full CRUD Test Enhancement**: Consider more end-to-end full CRUD lifecycle tests for critical components
+### 4. **Address Single-Interface Components**
+Components tested in only one interface should be evaluated for cross-interface test coverage needs
 
-5. **Consistency Across Interfaces**: Ensure similar CRUD coverage across API, CLI, and UI for each component
+### 5. **Standardize CaseComponent Metadata**
+Some test files are missing CaseComponent metadata (4 files identified). Ensure all test files include proper component classification
 
 ---
 
 ## Files Generated
 
-1. **robottelo_crud_analysis_detailed.json** - Complete detailed results with all test names
-2. **robottelo_crud_summary.csv** - Summary statistics in CSV format
+1. **robottelo_crud_by_casecomponent_detailed.json** - Complete detailed results with all test names and file mappings
+2. **robottelo_crud_by_casecomponent_summary.csv** - Summary statistics in CSV format for easy analysis
 3. **ROBOTTELO_CRUD_ANALYSIS_REPORT.md** - This comprehensive report
 
 ---
 
-*Analysis completed on December 1, 2025*  
-*Total test files analyzed: 230 (72 API + 81 CLI + 77 UI)*
+## Analysis Details
 
+- **Total test files analyzed:** 230 files (72 API + 81 CLI + 77 UI)
+- **Tests with CaseComponent metadata:** 3,002 CRUD tests
+- **Component extraction method:** AST parsing with regex fallback
+- **Metadata hierarchy:** Test-level → Class-level → Module-level
+
+---
+
+*Analysis completed on December 1, 2025*  
+*Robottelo Repository: https://github.com/SatelliteQE/robottelo*  
+*Classification based on :CaseComponent: metadata*
